@@ -10,10 +10,10 @@ import java.util.ResourceBundle;
 
 public class ChildPresenter implements Initializable {
     @FXML
-    private TextField textfield;
+    public TextField textfield;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Collector.target = textfield;
+        Collector.child = this;
     }
 }

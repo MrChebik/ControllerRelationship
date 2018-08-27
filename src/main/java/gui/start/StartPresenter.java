@@ -16,7 +16,7 @@ public class StartPresenter implements Initializable {
 
     @FXML
     private void clicked() {
-        label.setText(Collector.target.getText());
+        label.setText(Collector.child.textfield.getText());
     }
 
     @Override

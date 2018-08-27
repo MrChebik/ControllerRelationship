@@ -11,7 +11,7 @@ public class StartPresenter implements Initializable {
 
     @FXML
     private void clicked() {
-        label.setText(Collector.target.getText());
+        label.setText(Collector.child.textfield.getText());
     }
 
     @Override
@@ -24,17 +24,17 @@ public class StartPresenter implements Initializable {
 ```java
 public class ChildPresenter implements Initializable {
     @FXML
-    private TextField textfield;
+    public TextField textfield;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Collector.target = textfield;
+        Collector.child = this;
     }
 }
 ```
 ## Collector
 ```java
 public class Collector {
-    public static TextField target;
+    public static ChildPresenter child;
 }
 ```
