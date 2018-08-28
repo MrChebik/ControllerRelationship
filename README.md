@@ -1,8 +1,5 @@
-# Controller Relationship
-> An example of how you can get other component every where. 
-# Screenshot
+> An example of how you can get other component every where with **afterburner.fx**.
 ![ControllerRelationship - Screenshot](https://github.com/MrChebik/ControllerRelationship/blob/master/controllerrelationship-screenshot.png?raw=true)
-# Easy implementation - afterburner.fx
 ## ViewHelper
 ```java
 @AllArgsConstructor

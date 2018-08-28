@@ -1,10 +1,8 @@
 package gui;
 
+import gui.start.StartPresenter;
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import screen.Screen;
@@ -14,31 +12,28 @@ public abstract class PlaceHelper extends Application {
     protected Stage stage;
 
     protected void initWindow(String title,
-                              Modality modality,
                               Scale scale,
                               ViewHelper viewHelper) {
         stage.setTitle(title);
 
-        if (!modality.equals(Modality.NONE))
-            stage.initModality(modality);
+        if (!scale.equals(Scale.PLACE_START))
+            stage.initModality(Modality.APPLICATION_MODAL);
 
-        setSize(stage, scale);
-        setPosition(stage, scale);
+        setSize(scale);
+        setPosition(scale);
 
-        Scene scene = initScene(viewHelper);
-        //initFrame(scene);
+        var scene = initScene(viewHelper);
+        initFrame(viewHelper);
         stage.setScene(scene);
         stage.show();
     }
 
-    private void setSize(Stage stage,
-                         Scale scale) {
+    private void setSize(Scale scale) {
         stage.setWidth(scale.width);
         stage.setHeight(scale.height);
     }
 
-    private void setPosition(Stage stage,
-                             Scale scale) {
+    private void setPosition(Scale scale) {
         var point = Screen.calculateCenter(scale.width, scale.height);
 
         stage.setX(point.x);
@@ -52,7 +47,7 @@ public abstract class PlaceHelper extends Application {
      * @return
      */
     private Scene initScene(ViewHelper viewAction) {
-        Parent view = viewAction.view.getView();
+        var view = viewAction.view.getView();
 
         return view.isNeedsLayout() ?
                 new Scene(view)
@@ -62,19 +57,13 @@ public abstract class PlaceHelper extends Application {
 
     /**
      * Override this method, to add any additional actions when you want to open new Scene.
-     * Such as clear fields or something.
+     * Such as clear fields or something else.
      *
-     * @param scene
+     * @param helper
      */
-    private void initFrame(Scene scene) {
-        if (scene.getRoot().getChildrenUnmodifiable().get(0) instanceof GridPane) {
-            GridPane gridPane = (GridPane) scene.getRoot().getChildrenUnmodifiable().get(0);
-            if (gridPane.getChildren().size() > 0 &&
-                    gridPane.getChildren().get(1) instanceof TextField) {
-                TextField field = (TextField) gridPane.getChildren().get(1);
-                field.setText("");
-            }
-        }
+    private void initFrame(ViewHelper helper) {
+        if (helper.view.getPresenter() instanceof StartPresenter)
+            ((StartPresenter) helper.view.getPresenter()).label.setText("initFrame");
     }
 
     @Override

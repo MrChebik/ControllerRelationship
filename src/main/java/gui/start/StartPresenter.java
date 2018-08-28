@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class StartPresenter implements Initializable {
     @FXML
-    private Label label;
+    public Label label;
 
     @FXML
     private void clicked() {

@@ -2,7 +2,6 @@ package gui.start;
 
 import gui.PlaceHelper;
 import gui.ViewHelper;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import screen.measurement.Scale;
 
@@ -12,7 +11,6 @@ public class StartPlace extends PlaceHelper {
         super.stage = primaryStage;
 
         initWindow("Start this stage, let's do it!",
-                Modality.NONE,
                 Scale.PLACE_START,
                 ViewHelper.PLACE_START);
     }
