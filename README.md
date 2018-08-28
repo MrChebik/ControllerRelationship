@@ -3,6 +3,16 @@
 # Screenshot
 ![ControllerRelationship - Screenshot](https://github.com/MrChebik/ControllerRelationship/blob/master/controllerrelationship-screenshot.png?raw=true)
 # Easy implementation - afterburner.fx
+## ViewHelper
+```java
+@AllArgsConstructor
+public enum ViewHelper {
+    PLACE_START(new StartView()),
+    PLACE_CHILD(new ChildView());
+
+    public FXMLView view;
+}
+```
 ## Controller - Main
 ```java
 public class StartPresenter implements Initializable {
