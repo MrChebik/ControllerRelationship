@@ -1,4 +1,5 @@
-> An example of how you can get other component every where with **afterburner.fx**.
+> An example of how you can get other _component_ every where with **afterburner.fx**.
+
 ![ControllerRelationship - Screenshot](https://github.com/MrChebik/ControllerRelationship/blob/master/controllerrelationship-screenshot.png?raw=true)
 ## ViewHelper
 ```java
