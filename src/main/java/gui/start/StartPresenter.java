@@ -1,10 +1,10 @@
 package gui.start;
 
-import gui.Collector;
+import gui.ViewHelper;
 import gui.child.ChildPlace;
+import gui.child.ChildPresenter;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.net.URL;
@@ -16,7 +16,7 @@ public class StartPresenter implements Initializable {
 
     @FXML
     private void clicked() {
-        label.setText(Collector.child.textfield.getText());
+        label.setText(((ChildPresenter) ViewHelper.PLACE_CHILD.view.getPresenter()).textfield.getText());
     }
 
     @Override
