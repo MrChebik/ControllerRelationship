@@ -12,6 +12,6 @@ public class StartPlace extends PlaceHelper {
 
         initWindow("Start this stage, let's do it!",
                 Scale.PLACE_START,
-                ViewHelper.PLACE_START);
+                ViewHelper.START);
     }
 }

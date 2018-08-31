@@ -1,7 +1,8 @@
 package screen;
 
-import screen.measurement.Point;
 import javafx.geometry.Rectangle2D;
+import lombok.var;
+import screen.measurement.Point;
 
 public class Screen {
     private static final Rectangle2D bounds = javafx.stage.Screen.getPrimary().getVisualBounds();

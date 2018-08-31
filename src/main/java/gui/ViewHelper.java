@@ -7,8 +7,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum ViewHelper {
-    PLACE_START(new StartView()),
-    PLACE_CHILD(new ChildView());
+    START(new StartView()),
+    CHILD(new ChildView());
 
     public FXMLView view;
 }

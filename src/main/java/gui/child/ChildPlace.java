@@ -11,6 +11,6 @@ public class ChildPlace extends PlaceHelper {
 
         initWindow("A B C",
                 Scale.PLACE_CHILD,
-                ViewHelper.PLACE_CHILD);
+                ViewHelper.CHILD);
     }
 }
